@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LearnCanvas</string>
+    <string name="title_activity_learn_opc">LearnOPCActivity</string>
+</resources>

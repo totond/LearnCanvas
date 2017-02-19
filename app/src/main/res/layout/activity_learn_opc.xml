@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_learn_opc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="scut.com.learncanvas.LearnOPCActivity">
+
+    <scut.com.learncanvas.Views.OperateCanvasView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/view_opc"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_TRANSLATE"
+            android:layout_weight="1"
+            android:text="TRANSLATE"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_SCALE"
+            android:layout_weight="1"
+            android:text="SCALE"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_ROTATE"
+            android:layout_weight="1"
+            android:text="ROTATE"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_SKEW"
+            android:layout_weight="1"
+            android:text="SKEW"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_CLIP"
+            android:layout_weight="1"
+            android:text="CLIP"/>
+    </LinearLayout>
+</RelativeLayout>
