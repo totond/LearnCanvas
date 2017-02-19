@@ -3,8 +3,10 @@ package scut.com.learncanvas.Views;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Shader;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -13,7 +15,7 @@ import android.view.View;
  */
 
 public class DrawTextView extends View {
-    private Paint paintTS,paintTFAS,paintTF,paintSL,paintC,paintX;
+    private Paint paintTS,paintTFAS,paintTF,paintSL,paintC,paintX,paintSH;
     private Path path;
 
     public DrawTextView(Context context) {
@@ -71,6 +73,13 @@ public class DrawTextView extends View {
 
         path = new Path();
 
+        paintSH = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paintSH.setStyle(Paint.Style.FILL);
+        paintSH.setStrokeWidth(3);
+        int[] colors = new int[]{Color.RED,Color.YELLOW,Color.GREEN,Color.BLUE};
+        LinearGradient linearGradient = new LinearGradient(40,700,500,700,colors,null, Shader.TileMode.CLAMP);
+        paintSH.setShader(linearGradient);
+
 
     }
 
@@ -94,6 +103,11 @@ public class DrawTextView extends View {
         canvas.drawTextOnPath("在Path上写的字11111111112222",path,50,0,paintTFAS);
         //画出Path
         canvas.drawPath(path,paintTS);
+
+        //画渐变
+        canvas.drawRect(40,700,500,1000,paintSH);
+
+
 
     }
 }

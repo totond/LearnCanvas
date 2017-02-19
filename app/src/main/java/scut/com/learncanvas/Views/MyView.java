@@ -3,8 +3,10 @@ package scut.com.learncanvas.Views;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -59,8 +61,12 @@ public class MyView extends View {
 
         paintSide = new Paint();
         paintSide.setStyle(Paint.Style.STROKE);
-        paintSide.setStrokeWidth(4);
-        paintSide.setColor(Color.rgb(160,250,250));
+        paintSide.setStrokeWidth(5);
+        int[] colors = new int[]{Color.GREEN,Color.BLUE};
+        //设置颜色线性渐变器
+        LinearGradient linearGradient = new LinearGradient(0,0,screenWidth/2,screenHeight/2,colors
+                ,null, Shader.TileMode.MIRROR);
+        paintSide.setShader(linearGradient);
 
         sexPath = new Path();
         xCount = screenWidth/(sexSide*2)+1;
